@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Main Style -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <main class="main-layout">
+        <!-- Panel de Control -->
+        <section class="control-panel">
+            <header class="panel-header">
+                <h1>Nexo Studio</h1>
+                <p>Ecosistema de Diseño para Micro-Sitios Bio-Link</p>
+            </header>
+
+            <div id="ads-top"></div>
+
+            <form id="bio-form" action="/export" method="POST">
+                <!-- Sección Perfil -->
+                <div class="card">
+                    <h2 class="card-title"><i class="fa-solid fa-user-astronaut"></i> Identidad Visual</h2>
+                    <div class="form-group">
+                        <label for="name">Nombre o Marca</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Ej: Nexo Creative" value="Tu Nombre">
+                        <p class="help-text">Aparecerá en la parte superior del sitio.</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="bio">Biografía Profesional</label>
+                        <textarea id="bio" name="bio" class="form-control" rows="3" placeholder="Cuéntale al mundo quién eres..."></textarea>
+                        <p class="help-text">Máximo 150 caracteres para mejor legibilidad.</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="profile_url">Foto de Perfil (URL)</label>
+                        <input type="url" id="profile_url" name="profile_url" class="form-control" placeholder="https://tusitio.com/foto.jpg">
+                        <p class="help-text">Se recomienda una imagen cuadrada de alta calidad.</p>
+                    </div>
+                </div>
+
+                <!-- Fondo del Sitio Pro -->
+                <div class="card">
+                    <h2 class="card-title"><i class="fa-solid fa-clapperboard"></i> Fondo del Sitio</h2>
+                    
+                    <div class="form-group">
+                        <label for="bg_mode">Modo de Fondo</label>
+                        <select id="bg_mode" name="bg_mode" class="form-control">
+                            <option value="solid">Color Sólido</option>
+                            <option value="linear">Degradado Lineal</option>
+                            <option value="radial">Degradado Radial</option>
+                            <option value="mesh">Mesh Gradient (Artístico)</option>
+                            <option value="media">Media (Imagen/Video)</option>
+                        </select>
+                        <p class="help-text">Elige la atmósfera visual de tu micro-sitio.</p>
+                    </div>
+
+                    <div id="bg-color-controls">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label id="label-color-1">Color Principal</label>
+                                <input type="color" id="bg_color_1" name="bg_color_1" class="form-control" value="#05070a" style="height: 45px;">
+                            </div>
+                            <div class="form-group" id="bg-color-2-group" style="display: none;">
+                                <label>Color Secundario</label>
+                                <input type="color" id="bg_color_2" name="bg_color_2" class="form-control" value="#0070ff" style="height: 45px;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="bg-media-group" style="display: none;">
+                        <div class="form-group">
+                            <label for="bg_media_url">URL de Imagen/Video de Fondo</label>
+                            <input type="url" id="bg_media_url" name="bg_media_url" class="form-control" placeholder="https://tusitio.com/fondo.mp4">
+                            <p class="help-text">Se usará como fondo de todo el micro-sitio.</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mural_url">Mural de Cabecera (Imagen/Video URL)</label>
+                        <input type="url" id="mural_url" name="mural_url" class="form-control" placeholder="https://tusitio.com/mural.jpg">
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label for="mural_opacity">Opacidad Mural</label>
+                            <input type="range" id="mural_opacity" name="mural_opacity" class="form-control" min="0" max="100" value="70">
+                        </div>
+                        <div class="form-group">
+                            <label for="mural_blur">Desenfoque (Blur)</label>
+                            <input type="range" id="mural_blur" name="mural_blur" class="form-control" min="0" max="20" value="0">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Morfología de Enlaces -->
+                <div class="card">
+                    <h2 class="card-title"><i class="fa-solid fa-shapes"></i> Estilo de Enlaces</h2>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label for="button_shape">Geometría</label>
+                            <select id="button_shape" name="button_shape" class="form-control">
+                                <option value="pill">Pastilla (Pill)</option>
+                                <option value="rounded" selected>Redondeado</option>
+                                <option value="square">Cuadrado</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="button_style">Estilo de Botón</label>
+                            <select id="button_style" name="button_style" class="form-control">
+                                <option value="style-glass" selected>Cristal (Glass)</option>
+                                <option value="style-solid">Sólido (Solid)</option>
+                                <option value="style-outline">Contorno (Outline)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="button_finish">Acabado Visual</label>
+                            <select id="button_finish" name="button_finish" class="form-control">
+                                <option value="finish-glass">Cristal (Glass)</option>
+                                <option value="finish-flat">Plano (Flat)</option>
+                                <option value="finish-glow">Brillo Neón (Glow)</option>
+                                <option value="finish-neumorphic">Neumorfismo</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="button_animation">Efecto Interactivo (Hover)</label>
+                        <select id="button_animation" name="button_animation" class="form-control">
+                            <option value="anim-float">Flotar (Float)</option>
+                            <option value="anim-pulse">Latido (Pulse)</option>
+                            <option value="anim-glow">Brillo (Glow)</option>
+                            <option value="none">Sin Animación</option>
+                        </select>
+                        <p class="help-text">Ajusta cómo reaccionan los botones al pasar el ratón.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="typography">Tipografía del Sistema</label>
+                        <select id="typography" name="typography" class="form-control">
+                            <option value="font-modern">Modern Sans (Outfit)</option>
+                            <option value="font-elegant">Elegant Serif (Playfair)</option>
+                            <option value="font-tech">Tech Mono (Space Mono)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="accent_color">Color de Acento / Marca</label>
+                        <input type="color" id="accent_color" name="accent_color" class="form-control" value="#00f3ff" style="height: 45px;">
+                        <p class="help-text">Se aplicará a iconos y elementos interactivos.</p>
+                    </div>
+                </div>
+
+                <!-- Gestión de Enlaces -->
+                <div class="card">
+                    <h2 class="card-title"><i class="fa-solid fa-link"></i> Mis Enlaces</h2>
+                    <div id="links-header" style="display: grid; grid-template-columns: 1fr 1fr 48px 48px; gap: 0.75rem; padding: 0 0.75rem 0.5rem 0.75rem; font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">
+                        <span>Título</span>
+                        <span>URL / Destino</span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div id="links-container">
+                        <!-- Se inyectarán dinámicamente -->
+                    </div>
+                    <button type="button" id="add-link-btn" class="btn-add-link">
+                        <i class="fa-solid fa-plus"></i> Añadir Nuevo Enlace
+                    </button>
+                </div>
+
+                <button type="submit" class="btn-add-link" style="background: var(--accent-gradient); color: #fff; font-size: 1.2rem; margin-top: 2rem; border: none; box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
+                    <i class="fa-solid fa-rocket"></i> GENERAR MICRO-SITIO
+                </button>
+            </form>
+        </section>
+
+        <!-- Preview Panel -->
+        <section class="preview-panel">
+            <div class="mockup-container">
+                <div class="mockup-screen font-modern" id="preview-screen">
+                    <div class="bio-header" id="preview-mural-container">
+                        <div id="preview-mural" style="background-image: url('https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=1000&auto=format&fit=crop'); background-size: cover; background-position: center; height: 100%; width: 100%;"></div>
+                        <div class="mural-overlay" id="preview-overlay"></div>
+                        <div class="bio-profile" id="preview-profile" style="background-image: url('https://ui-avatars.com/api/?name=User&background=random');"></div>
+                    </div>
+                    <div class="bio-content">
+                        <h2 class="bio-name" id="preview-name">Tu Nombre</h2>
+                        <p class="bio-description" id="preview-bio">Explora mi ecosistema digital.</p>
+                        <div class="bio-links" id="preview-links">
+                            <!-- Enlaces en vivo -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>
