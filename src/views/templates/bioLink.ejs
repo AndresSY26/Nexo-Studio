@@ -52,7 +52,16 @@
             height: 260px;
             position: relative;
             background: #111;
+        }
+
+        .mural-wrapper {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
             overflow: hidden;
+            z-index: 1;
         }
 
         .mural {
@@ -85,7 +94,7 @@
         }
 
         .content {
-            margin-top: 80px;
+            margin-top: 100px;
             padding: 2rem;
             text-align: center;
         }
@@ -193,10 +202,12 @@
 
     <div class="container">
         <div class="header">
-            <% if (muralBase64) { %>
-                <img src="<%- muralBase64 %>" class="mural" alt="Mural">
-            <% } %>
-            <div class="overlay"></div>
+            <div class="mural-wrapper">
+                <% if (muralBase64) { %>
+                    <img src="<%- muralBase64 %>" class="mural" alt="Mural">
+                <% } %>
+            </div>
+            <div class="overlay" id="mural-overlay"></div>
             <img src="<%- profileBase64 %>" class="profile-img" alt="<%- name %>">
         </div>
 
