@@ -827,6 +827,102 @@ select.form-control option {
 .comp-card-others .fa-xmark { color: #ff4b2b; opacity: 0.5; }
 .comp-card-nexo .fa-check { color: #00ff88; text-shadow: 0 0 15px rgba(0, 255, 136, 0.5); }
 
+/* FAQ Accordion Premium */
+.faq-section {
+    padding: 8rem 5%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.faq-item:hover {
+    border-color: rgba(0, 243, 255, 0.2);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.faq-header {
+    padding: 1.8rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.faq-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.faq-icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--neon-cyan);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.faq-content p {
+    padding: 0 2.5rem 2rem 2.5rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.faq-item.active {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(0, 243, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+    color: #fff;
+}
+
+.faq-item.active .faq-content {
+    max-height: 300px;
+}
+
+/* Gallery Containment */
+.gallery-section {
+    padding: 8rem 0;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+    overflow: hidden;
+}
+
 /* Footer Refactor */
 .landing-footer {
     padding: 8rem 10% 4rem 10%;
