@@ -16,6 +16,7 @@
     
     <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="landing-body">
@@ -25,15 +26,16 @@
         <div class="parallax-circle c2"></div>
     </div>
 
-    <!-- Navbar -->
+    <!-- Navbar Premium -->
     <nav class="landing-nav">
         <div class="logo">
             <span class="neon-text">NEXO</span> STUDIO
         </div>
         <div class="nav-links">
-            <a href="#features">Características</a>
-            <a href="#gallery">Galería Pro</a>
-            <a href="/create" class="btn-cta-nav">Empezar Ahora</a>
+            <a href="#features" class="nav-link">Características</a>
+            <a href="#gallery" class="nav-link">Galería</a>
+            <a href="#faq" class="nav-link">FAQ</a>
+            <a href="/create" class="btn-cta-nav">Crear Ahora</a>
         </div>
     </nav>
 
@@ -42,7 +44,7 @@
         <section class="hero reveal">
             <div class="hero-content">
                 <div class="badge">DESIGN VANGUARD 2026</div>
-                <h1 class="hero-title">Tu Bio-Link, Tu Propiedad. <br><span class="shine-text">Sin suscripciones.</span></h1>
+                <h1 class="hero-title">Tu Bio-Link, <br>Tu <span class="shine-text">Propiedad.</span></h1>
                 <p class="hero-subtitle">
                     Crea micro-sitios premium con estética <strong>Glassmorphism</strong> en segundos y descarga el archivo HTML para siempre. 100% Gratis.
                 </p>
@@ -136,46 +138,88 @@
             </div>
         </section>
 
-        <!-- Comparativa (Why Nexo?) -->
+        <!-- Comparativa (Silicon Valley Refactor) -->
         <section id="features" class="comparison reveal">
-            <h2 class="section-title">¿Por qué Nexo?</h2>
-            <div class="comparison-table">
-                <div class="table-column">
-                    <div class="col-header">PLATAFORMAS TRADICIONALES</div>
-                    <ul>
-                        <li><i class="fa-solid fa-xmark red"></i> Suscripción Mensual</li>
-                        <li><i class="fa-solid fa-xmark red"></i> Publicidad Obligatoria</li>
-                        <li><i class="fa-solid fa-xmark red"></i> Control Limitado</li>
+            <h2 class="section-title">¿Por qué Nexo Studio?</h2>
+            <div class="comparison-grid">
+                <!-- Otros -->
+                <div class="comp-card comp-card-others">
+                    <div class="comp-title">Plataformas Tradicionales</div>
+                    <ul class="comp-list">
+                        <li class="comp-item"><i class="fa-solid fa-xmark"></i> Pago Mensual Obligatorio</li>
+                        <li class="comp-item"><i class="fa-solid fa-xmark"></i> Registro y Minería de Datos</li>
+                        <li class="comp-item"><i class="fa-solid fa-xmark"></i> No posees el código fuente</li>
+                        <li class="comp-item"><i class="fa-solid fa-xmark"></i> Diseño Genérico y Limitado</li>
                     </ul>
                 </div>
-                <div class="table-column highlight">
-                    <div class="col-header">NEXO STUDIO</div>
-                    <ul>
-                        <li><i class="fa-solid fa-check green"></i> 100% Gratis</li>
-                        <li><i class="fa-solid fa-check green"></i> Descarga el HTML</li>
-                        <li><i class="fa-solid fa-check green"></i> Privacidad Total</li>
+                <!-- Nexo -->
+                <div class="comp-card comp-card-nexo">
+                    <div class="comp-title">Nexo Studio</div>
+                    <ul class="comp-list">
+                        <li class="comp-item"><i class="fa-solid fa-check"></i> 100% Gratis para Siempre</li>
+                        <li class="comp-item"><i class="fa-solid fa-check"></i> Sin Registro - Uso Instantáneo</li>
+                        <li class="comp-item"><i class="fa-solid fa-check"></i> Descarga el HTML Autónomo</li>
+                        <li class="comp-item"><i class="fa-solid fa-check"></i> Estética Glassmorphism Pro</li>
                     </ul>
                 </div>
             </div>
         </section>
+
+        <!-- Sección FAQ (Placeholder para FAQ) -->
+        <section id="faq" class="reveal" style="padding: 6rem 0; text-align: center;">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <p style="color: rgba(255,255,255,0.4);">¿Es realmente gratis? Sí. ¿Puedo usarlo offline? Totalmente.</p>
+        </section>
     </main>
 
+    <!-- Footer Premium -->
     <footer class="landing-footer reveal">
-        <div class="footer-bottom">
-            <p>&copy; 2026 Nexo Studio. La evolución de los Bio-Links.</p>
-            <div class="footer-links">
-                <a href="#">Privacidad</a>
-                <a href="https://github.com/AndresSY26/Nexo-Studio">GitHub</a>
+        <div class="footer-grid">
+            <div class="footer-info">
+                <div class="logo" style="margin-bottom: 2rem;">
+                    <span class="neon-text">NEXO</span> STUDIO
+                </div>
+                <p>La revolución de los Bio-Links. Eres dueño de tu identidad digital, nosotros solo te damos las herramientas para que brille.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Producto</h4>
+                <ul>
+                    <li><a href="/create">Editor Pro</a></li>
+                    <li><a href="#gallery">Galería</a></li>
+                    <li><a href="#features">Características</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Recursos</h4>
+                <ul>
+                    <li><a href="https://github.com/AndresSY26/Nexo-Studio">Documentación</a></li>
+                    <li><a href="https://github.com/AndresSY26/Nexo-Studio">GitHub Repo</a></li>
+                    <li><a href="#faq">Soporte</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom-v2">
+            <p>&copy; 2026 Nexo Studio. Hecho con <i class="fa-solid fa-heart" style="color: #ff4b2b;"></i> por el equipo de diseño.</p>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </div>
     </footer>
 
     <script>
         // Intersection Observer para Revelación al Scroll
-        const observerOptions = {
-            threshold: 0.1
-        };
-
+        const observerOptions = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -186,13 +230,12 @@
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Efecto Parallax Suave en Círculos
+        // Efecto Parallax Suave
         document.addEventListener('mousemove', (e) => {
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
-            
-            document.querySelector('.c1').style.transform = `translate(${x * 50}px, ${y * 50}px)`;
-            document.querySelector('.c2').style.transform = `translate(${x * -50}px, ${y * -50}px)`;
+            const x = (e.clientX / window.innerWidth - 0.5) * 40;
+            const y = (e.clientY / window.innerHeight - 0.5) * 40;
+            document.querySelector('.c1').style.transform = `translate(${x}px, ${y}px)`;
+            document.querySelector('.c2').style.transform = `translate(${-x}px, ${-y}px)`;
         });
     </script>
 </body>
