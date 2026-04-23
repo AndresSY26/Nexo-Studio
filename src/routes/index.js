@@ -3,8 +3,11 @@ const router = express.Router();
 const dashboardController = require('../controllers/dashboardController');
 const exportController = require('../controllers/exportController');
 
-// Dashboard Route
-router.get('/', dashboardController.renderDashboard);
+// Landing Page Route
+router.get('/', dashboardController.renderHome);
+
+// Dashboard / Editor Route
+router.get('/create', dashboardController.renderDashboard);
 
 // Export Route
 router.post('/export', exportController.generateBioLink);

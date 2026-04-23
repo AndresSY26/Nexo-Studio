@@ -250,9 +250,45 @@ document.addEventListener('DOMContentLoaded', () => {
         renderLinks();
     });
 
-    // --- Inicialización ---
+    // --- Inicialización y Presets ---
     window.renderLinks = renderLinks;
     addLinkBtn.click(); // Añadir uno por defecto
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const preset = urlParams.get('preset');
+
+    if (preset) {
+        switch (preset) {
+            case 'elegant':
+                typographyInput.value = 'font-elegant';
+                accentColorInput.value = '#d4af37';
+                buttonShapeInput.value = 'rounded';
+                buttonStyleInput.value = 'style-outline';
+                bgModeInput.value = 'solid';
+                bgColor1Input.value = '#1a1a1a';
+                break;
+            case 'gamer':
+                typographyInput.value = 'font-tech';
+                accentColorInput.value = '#00f3ff';
+                buttonShapeInput.value = 'square';
+                buttonStyleInput.value = 'style-glass';
+                buttonAnimInput.value = 'anim-glow';
+                bgModeInput.value = 'mesh';
+                bgColor1Input.value = '#05070a';
+                bgColor2Input.value = '#001a33';
+                break;
+            case 'minimal':
+                typographyInput.value = 'font-modern';
+                accentColorInput.value = '#000000';
+                buttonShapeInput.value = 'pill';
+                buttonStyleInput.value = 'style-solid';
+                bgModeInput.value = 'solid';
+                bgColor1Input.value = '#ffffff';
+                break;
+        }
+    }
+
+    updateContrast();
     updateBackground();
     updateMuralFilters();
 });
